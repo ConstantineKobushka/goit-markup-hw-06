@@ -1,11 +1,12 @@
 body {
-  font-family: "Roboto", "Arial", "Times New Roman", "Helvetica Neue", "Tahoma", "Georgia", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
   color: #434455;
+  background-color: #ffffff;
 }
 
 a {
@@ -20,16 +21,17 @@ ul {
 }
 .header-nav {
 }
-.logo {
+.header-nav--logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.03em;
-  color: #2e2f42;
-}
-.logo span {
+  text-transform: uppercase;
   color: #4d5ae5;
+}
+.header-nav--logo span {
+  color: #2e2f42;
 }
 .header-nav--list {
 }
@@ -42,11 +44,11 @@ ul {
 .header-nav--list-link:hover {
   color: #404bbf;
 }
-.header-nav--list-link:active {
-  border-bottom: 4px solid #404bbf;
+.header-nav--list-link:focus {
   color: #404bbf;
 }
 .header-contact {
+  font-style: normal;
 }
 .header-contact--list {
 }
@@ -64,20 +66,23 @@ ul {
 }
 .solutions-title {
   font-size: 56px;
-  line-height: 1.07143;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
 }
 .solutions-btn {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: #fff;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: #4d5ae5;
-  border: none;
-  padding: 0;
   cursor: pointer;
+}
+.solutions-btn:focus {
+  background-color: #404bbf;
 }
 .solutions-btn:hover {
   background: #404bbf;
@@ -89,9 +94,11 @@ ul {
 .team-title,
 .portfolio-title {
   font-size: 36px;
-  line-height: 1.11111;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
+  text-transform: capitalize;
 }
 .advantages-list {
 }
@@ -103,6 +110,7 @@ ul {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
+  letter-spacing: 0.02em;
   color: #2e2f42;
 }
 .advantages-list--text {
@@ -117,6 +125,7 @@ ul {
 }
 .team-list--item {
   text-align: center;
+  background-color: #ffffff;
 }
 .team-list--title {
 }
@@ -140,6 +149,11 @@ ul {
   background-color: #2e2f42;
 }
 .footer-logo {
+  color: #4d5ae5;
+  text-transform: uppercase;
+  line-height: 1.17;
+}
+.footer-logo span {
   color: #f4f4fd;
 }
 .footer-text {
