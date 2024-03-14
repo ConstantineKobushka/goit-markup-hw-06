@@ -258,10 +258,8 @@ img {
   object-fit: cover;
   max-width: 100%;
 }
-.team-list--descr-wrapper {
-  padding: 32px 0px;
-}
 .team-list--descr {
+  padding: 32px 0px;
   text-align: center;
 }
 .team-list--text {
