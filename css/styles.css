@@ -346,7 +346,7 @@ img {
   background-color: #2e2f42;
   padding: 100px 0;
 }
-.footer .container {
+.footer-inner {
   display: flex;
   align-items: baseline;
 }
@@ -401,7 +401,7 @@ img {
 .footer-social--link:hover {
   background-color: #31d0aa;
 }
-.footer-social--link:active {
+.footer-social--link:focus {
   background-color: #31d0aa;
 }
 .footer-social--svg {
