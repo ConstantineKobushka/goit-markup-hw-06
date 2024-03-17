@@ -669,7 +669,6 @@ body {
   justify-content: center;
   fill: transparent;
   margin-right: 8px;
-  order: -1;
 }
 .modal-form--privacypolicy-input:checked + .modal-form--privacypolicy-label .modal-form--span-svg {
   background-color: #404bbf;
