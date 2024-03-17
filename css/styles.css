@@ -650,28 +650,28 @@ body {
   margin-bottom: 24px;
 }
 .modal-form--privacypolicy-label {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
 .modal-form--span-svg {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 16px;
   height: 16px;
-  border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  fill: transparent;
-  margin-right: 8px;
-  order: -1;
+  border-radius: 2px;
   transition:
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  margin-right: 8px;
+  order: -1;
 }
 .modal-form--privacypolicy-input:checked + .modal-form--privacypolicy-label .modal-form--span-svg {
   background-color: #404bbf;
