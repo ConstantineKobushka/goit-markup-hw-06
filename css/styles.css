@@ -431,7 +431,6 @@ body {
   border-radius: 4px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   padding: 8px 16px;
-  /* padding-left: 16px; */
   color: #fff;
   font-size: 12px;
   line-height: 2;
@@ -488,7 +487,7 @@ body {
   z-index: 999;
   opacity: 0;
   pointer-events: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opasiti 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-overlay.is-open {
   opacity: 1;
@@ -497,30 +496,36 @@ body {
 .modal-window {
   position: absolute;
   top: 80px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  max-width: 408px;
-  max-height: 584px;
-  padding: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  min-height: 584px;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
   box-shadow:
     0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
-  margin-left: auto;
-  margin-right: 0;
-  margin-bottom: 24px;
   border-radius: 50%;
-  border: none;
   background-color: #e7e9fc;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -529,36 +534,38 @@ body {
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.close-btn:focus {
+  background-color: #404bbf;
+}
 .close-btn:hover {
   background-color: #404bbf;
 }
 .close-btn:hover .close-svg {
   fill: #fff;
 }
-.modal-form--title {
+.close-btn:focus .close-svg {
+  fill: #fff;
+}
+.modal-window--title {
   font-weight: 500;
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
   margin-bottom: 16px;
 }
-.modal-form--label {
+.modal-form--div {
   margin-bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+}
+.modal-form--label {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  position: relative;
+  display: block;
+  margin-bottom: 4px;
 }
-.modal-form--svg {
-  position: absolute;
-  left: 16px;
-  bottom: 11px;
-  fill: #2e2f42;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.modal-form--input-wrapper {
+  position: relative;
 }
 .modal-form--input {
   font-family: "Roboto", sans-serif;
@@ -567,18 +574,26 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #434455;
-  border-radius: 4px;
-  padding: 8px 16px 8px 38px;
-  width: 360px;
+  width: 100%;
   height: 40px;
+  padding: 8px 16px 8px 38px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
   box-shadow:
     0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background: #fcfcfc;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form--svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form--input:focus {
   border-color: #4d5ae5;
@@ -590,21 +605,23 @@ body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #434455;
-  width: 360px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  width: 100%;
   height: 120px;
-  padding: 8px 16px;
   outline: none;
   resize: none;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
   box-shadow:
     0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background: #fcfcfc;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  padding: 8px 16px;
   margin-bottom: 8px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -617,45 +634,36 @@ body {
   color: rgba(46, 47, 66, 0.4);
 }
 .modal-form--textarea:focus {
-  border: 1px solid #4d5ae5;
+  border-color: #4d5ae5;
 }
 .modal-form--privacypolicy {
   margin-bottom: 24px;
-}
-.modal-form--privacypolicy-input {
-  width: 0;
-  height: 0;
-  opacity: 0;
-  position: absolute;
-  margin-left: -1000px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.modal-form--box-svg {
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.checked-svg {
-  fill: #f4f4fd;
+  gap: 8px;
 }
 .modal-form--privacypolicy-label {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
-.modal-form--privacypolicy-input:checked + .modal-form--privacypolicy-label .modal-form--box-svg {
+.modal-form--box-svg {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  order: -1;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form--privacypolicy-input:checked + .modal-form--privacypolicy-label + .modal-form--box-svg {
   background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 .modal-form--privacypolicy-link {
   font-size: 12px;
@@ -666,12 +674,16 @@ body {
   color: #4d5ae5;
 }
 .modal-form--btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   font-weight: 500;
   text-align: center;
   color: #fff;
   border-radius: 4px;
   padding: 16px 32px;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: #4d5ae5;
